@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
 //        myGameView.requestFocus();
         getwidth();
         SurfaceHolder mSHolder=myGameView.getHolder();
+
       Paint circlePain=  new Paint();
         circlePain .setColor(Color.RED);
         Paint bafflePain=  new Paint();
@@ -54,10 +55,14 @@ public class MainActivity extends Activity {
         BaffleBean baffleBean=new BaffleBean(100,300,600,20,10,bafflePain);
         viewArray.add(circleBean);
         viewArray.add(baffleBean);
+
         Ui  ui=new Ui(mSHolder,width,height,viewArray);
         Logic logic=new Logic( width,height,viewArray);
+
+
         myThead= new MyThead(ui,logic);
         MyCallback myCallback=new MyCallback(width,height,myThead,viewArray);
+
         myGameView.setOnKeyListener(myCallback);
         myGameView.setOnTouchListener(myCallback);
         mSHolder.addCallback(myCallback);

@@ -1,0 +1,16 @@
+自己编写的一个SerfaceView小游戏Demo，
+
+整体思路：定义一个MyGameView继承自SurfaceView，承载整个游戏。
+
+将游戏分为三个部分：
+
+        一 逻辑部分 ：由Logic类承载，游戏元素之间的碰撞逻辑由collision决定，元素内部的逻辑在游戏元素内部的logic方法中执行。
+
+        二 界面部分 ：定义一个界面元素的接口ViewBeanInterface 将每一个界面元素实现该接口，放入viewArray ArrayList<ViewBeanInterface> viewArray=new ArrayList<ViewBeanInterface>();
+                      UI类中的  myDraw方法中通过for循环绘制游戏元素。
+
+        三 刷新线程 ：不断调用逻辑执行类中的计算方法和UI勒种的绘制方法。
+
+    最终将界面的触摸点击事件，点击事件传入MyGameView 根据触摸位置分配事件。将MyCallback类传入MyGameView的SurfaceHolder中。整体架构完成。
+
+
