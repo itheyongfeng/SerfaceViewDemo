@@ -20,28 +20,30 @@ import com.rainbow.heyongfeng.myapplication.ui.Ui;
 
 import java.util.ArrayList;
 
+/**
+ * @author liuping
+ */
 public class MainActivity extends Activity {
-    //    GameView gv;
     MyThead myThead;
     MyGameView myGameView;
     int width, height;
-    ArrayList<ViewBeanInterface> viewArray = new ArrayList<ViewBeanInterface>( );
+    ArrayList<ViewBeanInterface> viewArray = new ArrayList<>( );
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow( ).setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         GameView view = new GameView(this);
         myGameView = new MyGameView(this);
         setContentView(myGameView);
-        init( );
+        init();
     }
 
     public void init() {
-//        myGameView.requestFocus();
-        getwidth( );
+        //myGameView.requestFocus();
+        getWidth( );
         SurfaceHolder mSHolder = myGameView.getHolder( );
 
         Paint circlePain = new Paint( );
@@ -70,8 +72,8 @@ public class MainActivity extends Activity {
         mSHolder.addCallback(myCallback);
     }
 
-    public void getwidth() {
-        WindowManager wm = (WindowManager) this.getSystemService(getApplication( ).WINDOW_SERVICE);
+    public void getWidth() {
+        WindowManager wm = (WindowManager) this.getSystemService(WINDOW_SERVICE);
         width = wm.getDefaultDisplay( ).getWidth( );
         height = wm.getDefaultDisplay( ).getHeight( );
     }

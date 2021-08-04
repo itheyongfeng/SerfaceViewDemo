@@ -23,6 +23,7 @@ public class CircleBean implements ViewBeanInterface {
         this.paint = paint;
     }
 
+    @Override
     public void logic(int width, int height) {
         if (x - r < 0) {
             vx = 10;

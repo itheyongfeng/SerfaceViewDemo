@@ -5,7 +5,9 @@ import android.view.KeyEvent;
 import android.view.View;
 
 /**
- * Created by HP on 2016/12/11.
+ *
+ * @author HeYongFeng
+ * @date 2016/12/11
  */
 
 public interface ViewBeanInterface {

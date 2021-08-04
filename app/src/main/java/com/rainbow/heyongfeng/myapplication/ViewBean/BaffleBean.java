@@ -7,7 +7,9 @@ import android.view.KeyEvent;
 import android.view.View;
 
 /**
- * Created by HP on 2016/12/11.
+ *
+ * @author HeYongFeng
+ * @date 2016/12/11
  */
 
 public class BaffleBean implements ViewBeanInterface {
@@ -26,6 +28,7 @@ public class BaffleBean implements ViewBeanInterface {
         this.paint = paint;
     }
 
+    @Override
     public void logic(int width, int height) {
 
     }

@@ -12,31 +12,39 @@ import android.view.SurfaceView;
 
 
 /**
- * Created by HeYongFeng on 2016/12/9.
+ *
+ * @author HeYongFeng
+ * @date 2016/12/9
  */
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback, Runnable {
 
 
-    //SurfaceHolder用于控制SurfaceView的大小、格式等，用于监听SurfaceView的状态。
+    /**
+     * SurfaceHolder用于控制SurfaceView的大小、格式等，用于监听SurfaceView的状态。
+     */
     private SurfaceHolder mSurfaceHolder;
     public Paint mPaint;
 
-    //初始化坐标
+    /**
+     * 初始化坐标
+     */
     private int textX = 100;
     private int textY = 100;
     private int top = 100;
     private int length = 100;
     int right = 100;
     int thickness = 20;
-    //声明一个线程
     private Thread mThread;
-    //线程消亡的标志位
+    /**
+     * 线程消亡的标志位
+     */
     private boolean flag = false;
 
-    //声明一个画布
     private Canvas mCanvas;
-    //声明屏幕的宽高,获取视图的宽高一定要在视图创建之后才可获取，即surfaceCreated之后获取，否则一直为0
+    /**
+     * 声明屏幕的宽高,获取视图的宽高一定要在视图创建之后才可获取，即surfaceCreated之后获取，否则一直为0
+     */
     private int screenWidth, screenHeight;
 
     public GameView(Context context) {
@@ -60,13 +68,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
 
     private void init() {
         //实例SurfaceHolder
-        mSurfaceHolder = getHolder( );
+        mSurfaceHolder = getHolder();
         //为SurfaceView添加状态监听
         mSurfaceHolder.addCallback(this);
         //实例一个画笔
         mPaint = new Paint( );
         mPaint.setColor(Color.RED);
-//        mPaint.setTextSize(30);
+        mPaint.setTextSize(30);
         //设置焦点
         setFocusable(true);
     }
@@ -79,8 +87,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
      */
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
-        screenWidth = getWidth( );
-        screenHeight = getHeight( );
+        screenWidth = getWidth();
+        screenHeight = getHeight();
         Log.d("CPXIAO", "screenWidth = " + screenWidth);
         Log.d("CPXIAO", "screenHeight = " + screenHeight);
         flag = true;
@@ -111,7 +119,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
     private void myDraw() {
         try {
             //使用SurfaceHolder.lockCanvas()获取SurfaceView的Canvas对象，并对画布加锁.
-            mCanvas = mSurfaceHolder.lockCanvas( );
+            mCanvas = mSurfaceHolder.lockCanvas();
             //得到自定义大小的画布，因为局部绘制，效率更高
             //      Canvas canvas = mSurfaceHolder.lockCanvas(new Rect(0,0,200,200));
 
