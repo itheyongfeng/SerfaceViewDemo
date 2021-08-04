@@ -11,7 +11,7 @@ import android.view.View;
  * Created by HP on 2016/12/11.
  */
 
-public class MyGameView extends SurfaceView  {
+public class MyGameView extends SurfaceView {
 
     public MyGameView(Context context) {
         super(context);
@@ -27,19 +27,19 @@ public class MyGameView extends SurfaceView  {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        Log.d("onKey","onKeyDownkeyCode>>>"+keyCode);
+        Log.d("onKey", "onKeyDownkeyCode>>>" + keyCode);
         return super.onKeyDown(keyCode, event);
     }
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        Log.d("onKey","onKeyUpkeyCode>>>"+keyCode);
+        Log.d("onKey", "onKeyUpkeyCode>>>" + keyCode);
         return super.onKeyUp(keyCode, event);
     }
 
     @Override
     public void setOnKeyListener(OnKeyListener l) {
-        Log.d("onKey","setOnKeyListener>>>");
+        Log.d("onKey", "setOnKeyListener>>>");
         super.setOnKeyListener(l);
     }
 

@@ -12,14 +12,15 @@ import android.view.SurfaceHolder;
  */
 
 public class MyThead extends Thread {
-    private   boolean flag;
-    public  Ui ui;
+    private boolean flag;
+    public Ui ui;
     public Logic logic;
-    private  int refreshTime= 30;
-    public MyThead( Ui ui,Logic logic) {
-        this.ui=ui;
-        this.logic=logic;
-        flag=true;
+    private int refreshTime = 30;
+
+    public MyThead(Ui ui, Logic logic) {
+        this.ui = ui;
+        this.logic = logic;
+        flag = true;
     }
 
     //设置刷新时间为50毫秒
@@ -27,17 +28,17 @@ public class MyThead extends Thread {
     @Override
     public void run() {
         while (flag) {
-            long start = System.currentTimeMillis();
-            logic.logic();
-            ui.myDraw();
-            long end = System.currentTimeMillis();
+            long start = System.currentTimeMillis( );
+            logic.logic( );
+            ui.myDraw( );
+            long end = System.currentTimeMillis( );
             try {
                 long use_time = end - start;
                 if (use_time < refreshTime) {
                     sleep(refreshTime - use_time);
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                e.printStackTrace( );
             }
         }
     }
@@ -48,23 +49,26 @@ public class MyThead extends Thread {
 
     /**
      * 设置界面刷新时间
+     *
      * @param refreshTime
      */
-    public void setRefreshTime(int refreshTime){
-        this.refreshTime=refreshTime;
+    public void setRefreshTime(int refreshTime) {
+        this.refreshTime = refreshTime;
     }
 
     /**
      * 获取界面刷新时间
+     *
      * @return
      */
-    public int getRefreshTime(){
+    public int getRefreshTime() {
         return refreshTime;
     }
+
     /**
      * 终止屏幕刷新，停止当前线程
      */
-    public void stopThread(){
-        flag=false;
+    public void stopThread() {
+        flag = false;
     }
 }
