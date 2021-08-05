@@ -121,7 +121,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
             //使用SurfaceHolder.lockCanvas()获取SurfaceView的Canvas对象，并对画布加锁.
             mCanvas = mSurfaceHolder.lockCanvas();
             //得到自定义大小的画布，因为局部绘制，效率更高
-            //      Canvas canvas = mSurfaceHolder.lockCanvas(new Rect(0,0,200,200));
+            //Canvas canvas = mSurfaceHolder.lockCanvas(new Rect(0,0,200,200));
 
             if (mCanvas != null) {
                 /**
@@ -131,15 +131,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
                 mCanvas.drawRGB(255, 255, 255);
 
                 //通过在Canvas上绘制内容来修改SurfaceView中的数据
-//                mCanvas.drawText("mySurfaceView", 50, 50, mPaint);
-//            public void drawCircle(float cx, float cy, float radius, Paint paint) {
+                //                mCanvas.drawText("mySurfaceView", 50, 50, mPaint);
+                //            public void drawCircle(float cx, float cy, float radius, Paint paint) {
                 Log.d("CPXIAO", "textX = " + textX + ",textY=" + textY);
-//            public void drawLine(float startX, float startY, float stopX, float stopY, Paint paint) {
+                //public void drawLine(float startX, float startY, float stopX, float stopY, Paint paint) {
 
-//            public void drawRect(float left, float top, float right, float bottom, Paint paint) {
+                //public void drawRect(float left, float top, float right, float bottom, Paint paint) {
                 mCanvas.drawRect(screenWidth - right - thickness, top, screenWidth - right, top + length, mPaint);
                 mCanvas.drawCircle((float) textX, (float) textY, (float) 50, mPaint);
-//                mCanvas.drawCircle((float)textX,(float)textY,(float)50,mPaint);
+                //mCanvas.drawCircle((float)textX,(float)textY,(float)50,mPaint);
             }
         } catch (Exception e) {
             e.printStackTrace( );
@@ -233,13 +233,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback, Run
             long start = System.currentTimeMillis( );
             myDraw( );
             logic( );
-//            updateUi.updateUi();
-//            cal.cal();
+            //updateUi.updateUi();
+            //cal.cal();
             long end = System.currentTimeMillis( );
             try {
                 long use_time = end - start;
                 if (use_time < REFRESH_TIME) {
-                    mThread.sleep(REFRESH_TIME - use_time);
+                    Thread.sleep(REFRESH_TIME - use_time);
                 }
             } catch (Exception e) {
                 e.printStackTrace( );

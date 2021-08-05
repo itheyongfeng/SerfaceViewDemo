@@ -5,10 +5,11 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.SurfaceView;
-import android.view.View;
 
 /**
- * Created by HP on 2016/12/11.
+ *
+ * @author heyongfeng
+ * @date 2016/12/11
  */
 
 public class MyGameView extends SurfaceView {

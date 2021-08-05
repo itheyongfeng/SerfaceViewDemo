@@ -2,7 +2,6 @@ package com.rainbow.heyongfeng.myapplication.ViewBean;
 
 import android.graphics.Canvas;
 import android.view.KeyEvent;
-import android.view.View;
 
 /**
  *
@@ -11,8 +10,6 @@ import android.view.View;
  */
 
 public interface ViewBeanInterface {
-
-//    public int width,height;//屏幕尺寸
 
     /**
      * 每个View的自有逻辑

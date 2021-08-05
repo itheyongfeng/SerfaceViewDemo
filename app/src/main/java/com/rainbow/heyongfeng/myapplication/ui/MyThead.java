@@ -1,13 +1,8 @@
 package com.rainbow.heyongfeng.myapplication.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.util.Log;
-import android.view.SurfaceHolder;
-
 /**
- * Created by HP on 2016/12/11.
+ * @author heyongfeng
+ * @date 2016/12/11
  * 屏幕刷新的线程
  */
 

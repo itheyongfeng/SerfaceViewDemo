@@ -18,7 +18,10 @@ import java.util.ArrayList;
 public class Ui {
     private Canvas mCanvas;
     private SurfaceHolder mSurfaceHolder;
-    private int width, height;//画布的宽与高
+    /**
+     * 画布的宽与高
+     */
+    private int width, height;
     ArrayList<ViewBeanInterface> viewArray;
 
     public Ui(SurfaceHolder mSurfaceHolder, int width, int height, ArrayList<ViewBeanInterface> viewArray) {
@@ -33,7 +36,7 @@ public class Ui {
             //使用SurfaceHolder.lockCanvas()获取SurfaceView的Canvas对象，并对画布加锁.
             mCanvas = mSurfaceHolder.lockCanvas( );
             //得到自定义大小的画布，因为局部绘制，效率更高
-            //      Canvas canvas = mSurfaceHolder.lockCanvas(new Rect(0,0,200,200));
+            //Canvas canvas = mSurfaceHolder.lockCanvas(new Rect(0,0,200,200));
 
             if (mCanvas != null) {
                 /**

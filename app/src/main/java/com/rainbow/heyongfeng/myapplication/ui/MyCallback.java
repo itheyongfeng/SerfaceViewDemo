@@ -13,7 +13,9 @@ import com.rainbow.heyongfeng.myapplication.ViewBean.ViewBeanInterface;
 import java.util.ArrayList;
 
 /**
- * Created by HP on 2016/12/11.
+ *
+ * @author heyongfeng
+ * @date 2016/12/11
  */
 
 public class MyCallback implements Callback ,View.OnKeyListener,View.OnTouchListener, GestureDetector.OnGestureListener {

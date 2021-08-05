@@ -3,18 +3,22 @@ package com.rainbow.heyongfeng.myapplication.ViewBean;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.KeyEvent;
-import android.view.View;
 
 /**
- * Created by HP on 2016/12/11.
+ *
+ * @author heyongfeng
+ * @date 2016/12/11
  */
 
 public class CircleBean implements ViewBeanInterface {
-    public int x = 100, y = 100, r = 30;
+    public int x, y, r;
     public Paint paint;
 
-    public int vx = 10;//横向速度
-    public int vy = 10;//纵向速度s
+    /**
+     * vx 横向速度
+     * vy 纵向速度s
+     */
+    public int vx = 10, vy = 10;
 
     public CircleBean(int x, int y, int r, int vx, int vy, Paint paint) {
         this.x = x;
